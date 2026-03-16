@@ -9,6 +9,12 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "https://ecommerce-api-client.vercel.app",
+  }),
+);
 
 // Database Connection
 mongoose
